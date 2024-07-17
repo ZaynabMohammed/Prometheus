@@ -4,18 +4,22 @@ in this example docker-compose contains 3 containers:
 ```bash
 docker compose up -d
 ```
-  ### node_exporter:
+  ### 1) node_exporter:
       1. Run a container named node-exporter
       2. Using port 9100
       3. Mount root volume from host into the container using read only permissions
       4. Exclude some sensetive directorices to exclude collecting metrcies from them
       4. Create the container from the image prom/node-exporter:latest
-  ### prometheus-docker:
+  ### 2) prometheus-docker:
     1. Run a container named prometheus-docker
     2. Using port 9090
-    3. Set Bind mount volume to bind Prometheus_Config_File into container
+    3. Set Bind mount volume to bind Prometheus configuration File into container
     4. Create the container from the image prom/prometheus
-  ### grafana-docker:
+ Therefore, in this configuration, Prometheus collects data from two sources:
+              
+    1. Metrics exposed by itself (Prometheus server) running on localhost at port 9090.
+    2. Metrics exposed by a node exporter service running at hostname 'node_exporter' on port 9100.   
+  ### 3) grafana-docker:
       1.  Run a container named grafana-docker
       2.  Using port 3000
       3. Set persistent volume name to grafana_data to /var/lib/grafana
