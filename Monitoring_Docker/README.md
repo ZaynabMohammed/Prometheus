@@ -1,9 +1,9 @@
 # Locally Monitoring using Node Exporter & Prometheus & Grafana into Docker
 ## Step 1: docker-compose
+in this example docker-compose contains 3 containers:
 ```bash
 docker compose up -d
 ```
-  in this example docker-compose contains 3 containers:
   ### node_exporter:
       1. Run a container named node-exporter
       2. Using port 9100
@@ -25,17 +25,17 @@ docker compose up -d
 
     http://localhost:9100
 
-  ![1](1.png)
+  ![1](1.PNG)
   ### Check prometheus is up and running
 
     http://localhost:9090
 
-  ![2](2.png)
+  ![2](2.PNG)
   ### Check Grafana is up and running
 
     http://localhost:3000
 
-  ![3](3.png)
+  ![3](3.PNG)
   ## Step 3: Connect Grafana to Pull metrics from Prometheus
    1. Navigate to:
 
@@ -52,7 +52,7 @@ docker compose up -d
    5. Navigate to `Dashboard` then `Import` and use the dashboard id `1860` then `Load`
    6. From the last section choose `Prometheus` then `Import`  
 You will be able to see all the data pulled from the node exporter presented in a nice UI
-![4](4.png)
+![4](4.PNG)
     
       
       
