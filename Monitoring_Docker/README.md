@@ -1,4 +1,4 @@
-# Locally Monitoring using Node Exporter & Prometheus & Grafana into Docker
+# Locally Monitoring using Docker
 ## Step 1: docker-compose
 in this example docker-compose contains 3 containers:
 ```bash
